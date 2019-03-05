@@ -49,6 +49,6 @@ public class ReaderPageJournalistTest extends WebDriverSetUp {
         newsroomHeading = readerStoriesPage.getNewsroomHeadingText();
         readerStoriesPage.clickOnStoriesSection();
         readerStoriesPage.clickOnFollowingSection();
-        readerStoriesPage.checkIfNewsroomFollowed(newsroomHeading); //
+        readerStoriesPage.checkIfNewsroomFollowed(newsroomHeading);
     }
 }
