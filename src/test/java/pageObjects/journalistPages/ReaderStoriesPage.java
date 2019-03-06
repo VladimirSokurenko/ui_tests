@@ -47,6 +47,8 @@ public class ReaderStoriesPage {
     WebElement alertsSubMenuSection;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[2]/nav/div/ul/li[2]/a")
+    WebElement companiesSubSection;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[2]/nav/div/ul/li[2]/a")
     WebElement followingSubMenuSection;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[3]/div/div/div/div/a[2]/h1")
@@ -57,6 +59,19 @@ public class ReaderStoriesPage {
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[3]/div/div/p")
     WebElement zeroStateTextSubscriptions;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[3]/div/div/div")
+    WebElement followedNewsroomCard;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"react-select-2--option-0\"]")
+    WebElement artTag;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"react-select-2--value\"]/div[1]")
+    WebElement topicsTagInputField;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[3]/div[1]/div[1]/div/button")
+    WebElement followCompanyButton;
+
 
 
 
@@ -123,6 +138,23 @@ public class ReaderStoriesPage {
         wait.until(ExpectedConditions.textToBePresentInElement(zeroStateTextSubscriptions, "You are not following any company or organization."));
         System.out.println("Zero state is displayed");
     }
+
+    public void selectArtTopicTag(){
+        topicsTagInputField.click();
+        artTag.click();
+        System.out.println("Search with Art tag has been executed");
+    }
+
+    public void navigateToCompaniesSubSection(){ companiesSubSection.click(); }
+
+    public void clickFollowCompanyButton(){ followCompanyButton.click();}
+
+    public void checkIfCompanyButtonFollowed(){
+        WebDriverWait wait = new WebDriverWait(driver,4);
+        wait.until(ExpectedConditions.textToBePresentInElement(followCompanyButton,"Following"));
+        System.out.println("Following the company");
+    }
+
 
 
 

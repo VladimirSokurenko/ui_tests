@@ -50,4 +50,19 @@ public class ReaderPageJournalistTest extends WebDriverSetUp {
         readerStoriesPage.clickOnFollowingButton();
         readerStoriesPage.checkIfSubscriptionsZeroStateIsPresent();
     }
+
+    @Test(description = "as journalist I want to be able to subscribe on newsroom trough companies feed")
+    public void subscribeOnPressRoomTroughCompaniesFeed(){
+        ReaderStoriesPage readerStoriesPage = PageFactory.initElements(driver, ReaderStoriesPage.class);
+        loginTroughReaderPage();
+        readerStoriesPage.selectArtTopicTag();
+        readerStoriesPage.navigateToCompaniesSubSection();
+        readerStoriesPage.clickFollowCompanyButton();
+        readerStoriesPage.checkIfCompanyButtonFollowed();
+        readerStoriesPage.clickOnSubscriptionsSection();
+        readerStoriesPage.verifySubscriptionsSectionIsReached();
+        readerStoriesPage.clickOnFollowingSection();
+        readerStoriesPage.clickOnFollowingButton();
+        readerStoriesPage.checkIfSubscriptionsZeroStateIsPresent();
+    }
 }
