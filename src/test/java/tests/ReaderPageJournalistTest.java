@@ -4,10 +4,10 @@ import driverSetUp.WebDriverSetUp;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import pageObjects.journalistPages.ReaderStoriesPage;
-import sun.text.normalizer.Utility;
 
 
 public class ReaderPageJournalistTest extends WebDriverSetUp {
+
     /** variables for test */
 
     String toggledReaderPages = "https://www.mynewsdesk.com/stories?FEATURE_TOGGLE=beta-reader";
@@ -38,17 +38,16 @@ public class ReaderPageJournalistTest extends WebDriverSetUp {
         System.out.println("Journalist " +journalistUsername + " successfully logged out");
     }
 
-
     @Test(description = "as journalist I want to be able to subscribe on newsroom trough newsroom feed")
     public void subscribeOnPressRoomTroughNewsFeed() {
-        String newsroomHeading;
         ReaderStoriesPage readerStoriesPage = PageFactory.initElements(driver, ReaderStoriesPage.class);
         loginTroughReaderPage();
         readerStoriesPage.clickFollowNewsButton();
         readerStoriesPage.ifButtonFollowing();
-        newsroomHeading = readerStoriesPage.getNewsroomHeadingText();
-        readerStoriesPage.clickOnStoriesSection();
+        readerStoriesPage.clickOnSubscriptionsSection();
+        readerStoriesPage.verifySubscriptionsSectionIsReached();
         readerStoriesPage.clickOnFollowingSection();
-        readerStoriesPage.checkIfNewsroomFollowed(newsroomHeading);
+        readerStoriesPage.clickOnFollowingButton();
+        readerStoriesPage.checkIfSubscriptionsZeroStateIsPresent();
     }
 }

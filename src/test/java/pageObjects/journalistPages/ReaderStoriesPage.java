@@ -43,11 +43,20 @@ public class ReaderStoriesPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[1]/div[1]/nav/div[2]/div/ul/li[2]/a")
     WebElement subscriptionsSection;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[2]/nav/div/ul/li[1]/a")
+    WebElement alertsSubMenuSection;
+
     @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[2]/nav/div/ul/li[2]/a")
     WebElement followingSubMenuSection;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[3]/div/div/div/div/a[2]/h1")
-    WebElement followedNewsrommHeading;
+    WebElement followedNewsroomHeading;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[3]/div/div/div/button")
+    WebElement followingButton;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[3]/div/div/p")
+    WebElement zeroStateTextSubscriptions;
 
 
 
@@ -87,17 +96,33 @@ public class ReaderStoriesPage {
         Assert.assertEquals(logInLink.getText(), "Log in");
     }
 
-    public void clickOnStoriesSection(){ subscriptionsSection.click(); }
+    public void clickOnSubscriptionsSection(){ subscriptionsSection.click(); }
 
     public void clickOnFollowingSection(){ followingSubMenuSection.click(); }
 
+    public void verifySubscriptionsSectionIsReached(){
+        WebDriverWait wait = new WebDriverWait(driver,4);
+        wait.until(ExpectedConditions.visibilityOf(alertsSubMenuSection));
+        wait.until(ExpectedConditions.visibilityOf(followingSubMenuSection));
+        System.out.println("Subscriptions section is reached");
+    }
+
     public void checkIfNewsroomFollowed(String companyName){
         WebDriverWait wait = new WebDriverWait(driver,4);
-        wait.until(ExpectedConditions.textToBePresentInElement(followedNewsrommHeading, companyName));
+        wait.until(ExpectedConditions.textToBePresentInElement(followedNewsroomHeading, companyName));
         System.out.println("Followed company is present");
     }
 
+    public void clickOnFollowingButton(){
+        followingButton.click();
+        System.out.println("Click un-follow button");
+    }
 
+    public void checkIfSubscriptionsZeroStateIsPresent(){
+        WebDriverWait wait = new WebDriverWait(driver,4);
+        wait.until(ExpectedConditions.textToBePresentInElement(zeroStateTextSubscriptions, "You are not following any company or organization."));
+        System.out.println("Zero state is displayed");
+    }
 
 
 
