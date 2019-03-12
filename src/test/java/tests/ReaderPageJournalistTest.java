@@ -1,6 +1,7 @@
 package tests;
 
 import driverSetUp.WebDriverSetUp;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import pageObjects.journalistPages.ReaderStoriesPage;
@@ -65,4 +66,15 @@ public class ReaderPageJournalistTest extends WebDriverSetUp {
         readerStoriesPage.clickOnFollowingButton();
         readerStoriesPage.checkIfSubscriptionsZeroStateIsPresent();
     }
+
+    @Test(description = "as journalist I want to be able to create non-schedule alert")
+    public void createNonScheduleAlert(){
+        ReaderStoriesPage readerStoriesPage = PageFactory.initElements(driver, ReaderStoriesPage.class);
+        loginTroughReaderPage();
+        readerStoriesPage.selectArtTopicTag();
+        readerStoriesPage.clickOnTurnThisIntoAnAlertButton();
+        readerStoriesPage.verifyAlertCreationFormIsDisplayed(); //unfinished
+    }
+
+
 }

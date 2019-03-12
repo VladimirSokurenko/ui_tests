@@ -7,6 +7,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class ReaderStoriesPage {
 
@@ -71,6 +72,14 @@ public class ReaderStoriesPage {
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[3]/div[1]/div[1]/div/button")
     WebElement followCompanyButton;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div[3]/div[2]/button")
+    WebElement createAlertButton;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"app-overlay\"]/div/div/article/div[1]/h1")
+    WebElement alertFormHeading;
+
+
 
 
 
@@ -154,6 +163,16 @@ public class ReaderStoriesPage {
         wait.until(ExpectedConditions.textToBePresentInElement(followCompanyButton,"Following"));
         System.out.println("Following the company");
     }
+
+    public void clickOnTurnThisIntoAnAlertButton(){ createAlertButton.click(); }
+
+    public void verifyAlertCreationFormIsDisplayed(){
+        WebDriverWait wait = new WebDriverWait(driver,4);
+        wait.until(ExpectedConditions.textToBePresentInElement(alertFormHeading,"Save new alert"));
+        System.out.println("Alert creation form is opened");
+    }
+
+
 
 
 
