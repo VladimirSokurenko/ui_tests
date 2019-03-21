@@ -44,7 +44,7 @@ public class PressReleasesPage {
 
     public void chooseDraftOption(){ draftFilterOption.click(); }
 
-    public void choosePublishOption(){ publishFilterButton.click(); }
+    public void choosePublishOption(){ publishFilterOption.click(); }
 
     public void chooseSecheduledOption(){ scheduleFilterOption.click(); }
 
@@ -62,6 +62,13 @@ public class PressReleasesPage {
             WebElement element = driver.findElement(By.xpath("//*[@id=\"react-container\"]/div/div[2]/ul/li["+i+"]/div/div/div"));
             wait.until(ExpectedConditions.textToBePresentInElement(element, "Draft"));
         }
+    }
+
+    public void verifyTopMaterialIs(String materialType){ // should be changed this is not POM and PFM
+        WebDriverWait wait = new WebDriverWait(driver, 4);
+        WebElement element = driver.findElement(By.xpath("//*[@id=\"react-container\"]/div/div[2]/ul/li[1]/div/div/div"));
+        wait.until(ExpectedConditions.textToBePresentInElement(element, materialType));
+        System.out.println("The top material is " + element.getText());
     }
 
 

@@ -1,9 +1,6 @@
 package driverSetUp;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -45,6 +42,15 @@ public class WebDriverSetUp {
             System.out.println("Screenshot has taken!");
         } catch (Exception e){
             System.out.println("Exception" + e.getMessage());
+        }
+    }
+
+    public boolean verifyElementPresent(String locator){
+    try {
+        driver.findElement(By.xpath(locator));
+        return true;
+    } catch (org.openqa.selenium.NoSuchElementException e) {
+        return false;
         }
     }
 

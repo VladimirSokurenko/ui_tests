@@ -2,8 +2,11 @@ package tests;
 
 import driverSetUp.WebDriverSetUp;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.UserSignInPage;
@@ -51,6 +54,27 @@ public class PublishListTests extends WebDriverSetUp {
         pressReleasesPage.clickOnFilterButton();
         pressReleasesPage.chooseDraftOption();
         pressReleasesPage.verifyFilterText("Showing: draft");
-        pressReleasesPage.verifyDraftMaterialsListed();
+        pressReleasesPage.verifyTopMaterialIs("DRAFT");
     }
+
+    @Test(priority = 4, description = "apply published filter")
+    public void applyPublishedFilter(){
+        PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
+        navigateToThePressReleasesPage();
+        pressReleasesPage.clickOnFilterButton();
+        pressReleasesPage.choosePublishOption();
+        pressReleasesPage.verifyFilterText("Showing: published");
+        pressReleasesPage.verifyTopMaterialIs("PUBLISHED");
+    }
+
+    @Test(priority = 4, description = "apply published filter")
+    public void applyScheduledFilter(){
+        PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
+        navigateToThePressReleasesPage();
+        pressReleasesPage.clickOnFilterButton();
+        pressReleasesPage.chooseSecheduledOption();
+        pressReleasesPage.verifyFilterText("Showing: scheduled");
+        pressReleasesPage.verifyTopMaterialIs("SCHEDULED");
+    }
+
 }
