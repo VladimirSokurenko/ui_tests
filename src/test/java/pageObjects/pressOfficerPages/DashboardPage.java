@@ -1,5 +1,6 @@
 package pageObjects.pressOfficerPages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,12 +16,14 @@ public class DashboardPage {
     public DashboardPage(WebDriver driver){ this.driver = driver; }
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[1]/div/div/div[2]/ol/li[1]/div/span")
-    WebElement publishMenu;
+    WebElement publishMenuDropDown;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[1]/div/div/div[2]/ol/li[1]/div/div/div/a[1]")
     WebElement pressReleasesOption;
 
-    public void clickOnPublishDropDown(){ publishMenu.click(); }
+    final static String PUBLISH_DROP_DOWN = "//*[@id=\"react-container\"]/div/div[1]/div/div/div[2]/ol/li[1]/div/span";
+
+    public void clickOnPublishDropDown(){ publishMenuDropDown.click(); }
 
     public void clickOnPressReleasesOption(){ pressReleasesOption.click(); }
 
@@ -32,7 +35,7 @@ public class DashboardPage {
 
     public void verifyDashboardSection(){
         WebDriverWait wait = new WebDriverWait(driver, 4);
-        wait.until(ExpectedConditions.elementToBeClickable(publishMenu)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(PUBLISH_DROP_DOWN)))).click();
         System.out.println("User navigate to the dashboard section");
     }
 

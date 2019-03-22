@@ -34,9 +34,11 @@ public class PressReleasesPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/ul/li[1]/div/div/div")
     WebElement firstMaterialHeading;
 
+    final static String PUBLISH_FILTER_BUTTON ="publish-filter-button";
+
     public void verifyFilterButtonIsPresent(){
         WebDriverWait wait = new WebDriverWait(driver, 4);
-        wait.until(ExpectedConditions.visibilityOf(publishFilterButton));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id(PUBLISH_FILTER_BUTTON))));
         System.out.println("User navigate to the press release section");
     }
 
@@ -46,29 +48,20 @@ public class PressReleasesPage {
 
     public void choosePublishOption(){ publishFilterOption.click(); }
 
-    public void chooseSecheduledOption(){ scheduleFilterOption.click(); }
+    public void chooseScheduledOption(){ scheduleFilterOption.click(); }
 
     public void verifyFilterText(String text){
         WebDriverWait wait = new WebDriverWait(driver, 4);
-        wait.until(ExpectedConditions.textToBePresentInElement(publishFilterButton, text));
+        wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id(PUBLISH_FILTER_BUTTON)), text));
         System.out.println("Filter button has " + text + " text");
     }
 
     public void clickOnFilterButton(){ publishFilterButton.click(); }
 
-    public void verifyDraftMaterialsListed(){
-        WebDriverWait wait = new WebDriverWait(driver, 4);
-        for (int i = 1; i <= 10 ; i++) {
-            WebElement element = driver.findElement(By.xpath("//*[@id=\"react-container\"]/div/div[2]/ul/li["+i+"]/div/div/div"));
-            wait.until(ExpectedConditions.textToBePresentInElement(element, "Draft"));
-        }
-    }
-
     public void verifyTopMaterialIs(String materialType){ // should be changed this is not POM and PFM
         WebDriverWait wait = new WebDriverWait(driver, 4);
-        WebElement element = driver.findElement(By.xpath("//*[@id=\"react-container\"]/div/div[2]/ul/li[1]/div/div/div"));
-        wait.until(ExpectedConditions.textToBePresentInElement(element, materialType));
-        System.out.println("The top material is " + element.getText());
+        wait.until(ExpectedConditions.textToBePresentInElement(firstMaterialHeading, materialType));
+        System.out.println("The top material is " + firstMaterialHeading.getText());
     }
 
 

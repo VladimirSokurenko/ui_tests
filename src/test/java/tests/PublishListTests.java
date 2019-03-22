@@ -16,13 +16,17 @@ import pageObjects.pressOfficerPages.PressRoomsPage;
 
 public class PublishListTests extends WebDriverSetUp {
 
+    final static String USERNAME = "vladimir.s";
+    final static String PASSWORD = "vladimir2019";
+    final static String BASE_URL = "https://www.mynewsdesk.com/user/signin";
+
     @Test(priority = 1, description = "login as Press Officer")
     public void logInAsPressOfficer(){
         UserSignInPage userSignInPage = PageFactory.initElements(driver, UserSignInPage.class);
         PressRoomsPage pressRoomsPage = PageFactory.initElements(driver, PressRoomsPage.class);
-        openBrowser("https://www.mynewsdesk.com/user/signin");
-        userSignInPage.fillInUsername("vladimir.s");
-        userSignInPage.fillInPassword("vladimir2019");
+        openBrowser(BASE_URL);
+        userSignInPage.fillInUsername(USERNAME);
+        userSignInPage.fillInPassword(PASSWORD);
         userSignInPage.clickLoginButton();
         pressRoomsPage.verifyManageUsersButtonIsPresent();
     }
@@ -72,7 +76,7 @@ public class PublishListTests extends WebDriverSetUp {
         PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
         navigateToThePressReleasesPage();
         pressReleasesPage.clickOnFilterButton();
-        pressReleasesPage.chooseSecheduledOption();
+        pressReleasesPage.chooseScheduledOption();
         pressReleasesPage.verifyFilterText("Showing: scheduled");
         pressReleasesPage.verifyTopMaterialIs("SCHEDULED");
     }
