@@ -1,5 +1,6 @@
 package pageObjects.pressOfficerPages;
 
+import driverSetUp.WebDriverSetUp;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,8 +10,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.Assertion;
 
-public class PressReleasesPage {
+public class PressReleasesPage extends WebDriverSetUp {
 
     WebDriver driver;
 
@@ -22,17 +24,50 @@ public class PressReleasesPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div/div/ul/li[1]/a")
     WebElement allFilterOption;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div/div/ul/li[2]/a")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"app-overlay\"]/div/div/div/div[3]/section/button[1]")
+    WebElement cloneButton;
+
+    @FindBy(how = How.LINK_TEXT, using = "Draft")
     WebElement draftFilterOption;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div/div/ul/li[3]/a")
+    @FindBy(how = How.LINK_TEXT, using = "Published")
     WebElement publishFilterOption;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div/div/ul/li[4]/a")
+    @FindBy(how = How.LINK_TEXT, using = "Scheduled")
     WebElement scheduleFilterOption;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/ul/li[1]/div/div/div")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div[5]/ul/li[1]/div[1]/div/div/span")
     WebElement firstMaterialHeading;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div[5]/ul/li[1]/div[1]/div/span/a")
+    WebElement pressReleaseTitle;
+
+    @FindBy(how = How.ID, using = "actions-dropdown")
+    WebElement actionsDropDown;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/ul/li[1]/div[2]/ul/li[7]/a")
+    WebElement deleteDraftOption;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div[5]/ul/li[1]/div[2]/ul/li[4]/a")
+    WebElement cloneActionButton;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"app-overlay\"]/div/div/div/div[3]/section/ul/li[1]/div[2]/div/span/span")
+    WebElement newsRoomHeading;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div[3]/a")
+    WebElement createNewPressReleaseButton;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"54458\"]")
+    WebElement codemoGlobalCheckBox;
+
+    @FindBy(how = How.PARTIAL_LINK_TEXT, using = "Codemocrazy global")
+    WebElement codemoGlobalSelectOption;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div[6]/div/div/div[2]/p")
+    WebElement toasterParagraph;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[1]/div/div/div[3]/ol/li[3]")
+    WebElement newsRoomSelector;
 
     final static String PUBLISH_FILTER_BUTTON ="publish-filter-button";
 
@@ -43,6 +78,8 @@ public class PressReleasesPage {
     }
 
     public void chooseAllOption(){ allFilterOption.click(); }
+
+    public void clickOnNewsRoomSelector(){ newsRoomSelector.click(); }
 
     public void chooseDraftOption(){ draftFilterOption.click(); }
 
@@ -56,13 +93,54 @@ public class PressReleasesPage {
         System.out.println("Filter button has " + text + " text");
     }
 
+    public void checkFirstNewsRoomCheckBox(){
+        codemoGlobalCheckBox.click();
+        if(codemoGlobalCheckBox.isSelected()){
+            System.out.println(newsRoomHeading.getText() + " is selected!");
+        } else {
+            System.out.println(newsRoomHeading.getText() + " is NOT selected!");
+        }
+    }
+
+    public void verifyToasterText(String title){
+        String toasterRealText = toasterParagraph.getText();
+        System.out.println(toasterRealText);
+        String toasterExpectedText = "\"" + title + "\" was successfully cloned";
+        Assert.assertEquals(toasterExpectedText, toasterExpectedText);
+
+    }
+
+    public void clickCreateNewPressReleaseButton(){ createNewPressReleaseButton.click(); }
+
     public void clickOnFilterButton(){ publishFilterButton.click(); }
+
+    public void clickCloneActionButton(){ cloneActionButton.click(); }
 
     public void verifyTopMaterialIs(String materialType){ // should be changed this is not POM and PFM
         WebDriverWait wait = new WebDriverWait(driver, 4);
         wait.until(ExpectedConditions.textToBePresentInElement(firstMaterialHeading, materialType));
         System.out.println("The top material is " + firstMaterialHeading.getText());
     }
+
+    public void clickActionsDropDown(){ actionsDropDown.click(); }
+
+    public void clickDeleteDraftOption() { deleteDraftOption.click(); }
+
+    public String getPressReleaseTitleText(){
+        String text = pressReleaseTitle.getText();
+        return text;
+    }
+
+    public void clickOnCodemoGlobalOption(){ codemoGlobalSelectOption.click(); }
+
+    public void clickCloneButton(){ cloneButton.click(); }
+
+    public void verifyPressReleaseCloned(String title){
+        String titleTextV = getPressReleaseTitleText();
+        Assert.assertEquals(titleTextV, title);
+    }
+
+
 
 
 }

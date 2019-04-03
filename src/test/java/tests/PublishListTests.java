@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.openqa.selenium.support.ui.Select;
 import pageObjects.UserSignInPage;
 import pageObjects.pressOfficerPages.DashboardPage;
 import pageObjects.pressOfficerPages.PressReleasesPage;
@@ -71,7 +72,7 @@ public class PublishListTests extends WebDriverSetUp {
         pressReleasesPage.verifyTopMaterialIs("PUBLISHED");
     }
 
-    @Test(priority = 4, description = "apply published filter")
+    @Test(priority = 4, description = "apply scheduled filter")
     public void applyScheduledFilter(){
         PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
         navigateToThePressReleasesPage();
@@ -80,5 +81,29 @@ public class PublishListTests extends WebDriverSetUp {
         pressReleasesPage.verifyFilterText("Showing: scheduled");
         pressReleasesPage.verifyTopMaterialIs("SCHEDULED");
     }
+
+    @Test(priority = 5, description = "clone DRAFT press release")
+    public void cloneDraftPressRelease() throws InterruptedException{
+        PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
+        DashboardPage dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
+        navigateToThePressReleasesPage();
+        String pressReleaseTitle = pressReleasesPage.getPressReleaseTitleText();
+        System.out.println("title is: " + pressReleaseTitle);
+        scrollPageDown("1000");
+        pressReleasesPage.clickActionsDropDown();
+        pressReleasesPage.clickCloneActionButton();
+        pressReleasesPage.checkFirstNewsRoomCheckBox();
+        pressReleasesPage.clickCloneButton();
+        pressReleasesPage.verifyToasterText(pressReleaseTitle);
+        scrollPageDown("-1000");
+        pressReleasesPage.clickOnNewsRoomSelector();
+        pressReleasesPage.clickOnCodemoGlobalOption();
+        dashboardPage.clickOnPublishDropDown();
+        dashboardPage.clickOnPressReleasesOption();
+        scrollPageDown("500");
+        pressReleasesPage.verifyPressReleaseCloned(pressReleaseTitle);
+    }
+
+
 
 }

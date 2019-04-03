@@ -4,7 +4,11 @@ import driverSetUp.WebDriverSetUp;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
+
+import java.util.Arrays;
 
 public class UglyFuzzersTests extends WebDriverSetUp {
 
@@ -44,16 +48,18 @@ public class UglyFuzzersTests extends WebDriverSetUp {
 
     @Test(priority = 5)
     public void createPressRelease() throws InterruptedException{
-        driver.get("https://www.mnd-staging.com/user/signin");
+        String baseUrlProduction = "https://www.mynewsdesk.com/user/signin";
+        driver.get(baseUrlProduction);
         driver.findElement(By.id("username")).sendKeys("vova_sloboda_po");
         WebElement passwordField = driver.findElement(By.id("password"));
         passwordField.sendKeys("123123qwe");
         passwordField.submit();
-        driver.findElement(By.xpath("//*[@id=\"react-container\"]/div/div[1]/div/div/div[2]/ol/li[1]/div/span/span/span")).click();
+        driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div/div[2]/div/section/table/tbody/tr[2]/td/a")).click();
+        driver.findElement(By.xpath("//*[@id=\"react-container\"]/div/div[1]/div/div/div[2]/ol/li[1]/div/span")).click();
         driver.findElement(By.xpath("//*[@id=\"react-container\"]/div/div[1]/div/div/div[2]/ol/li[1]/div/div/div/a[1]")).click();
-        driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[2]/div[1]/div/a")).click();
-        for (int i = 4; i <= 15; i++) {
-            String name = "Auto PR " + i;
+        driver.findElement(By.xpath("//*[@id=\"react-container\"]/div/div[2]/div[3]/a")).click();
+        for (int i = 1; i <= 10; i++) {
+            String name = "Auto Press Release " + i;
             driver.findElement(By.id("item_header")).sendKeys(name);
             driver.findElement(By.xpath("//*[@id=\"item_update_form\"]/div[1]/div[1]/div/div[2]/div[4]/div[2]/div")).sendKeys(name);
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("//*[@id=\"save_button\"]")));
@@ -64,18 +70,21 @@ public class UglyFuzzersTests extends WebDriverSetUp {
             Thread.sleep(500);
             driver.findElement(By.xpath("//*[@id=\"submit_button\"]")).click();
             driver.findElement(By.xpath("//*[@id=\"submit-confirm-yes\"]")).click();
-            if(verifyElementPresent("//*[@id=\"analyze-modal-close-button\"]")) {
-                driver.findElement(By.xpath("//*[@id=\"analyze-modal-close-button\"]")).click();
-                driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div[1]/div/a")).click();
-            } else {
-                driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div[3]/div[1]/div/a")).click();
-            }
+            driver.findElement(By.xpath("//*[@id=\"react-container\"]/div/div[2]/div[3]/a")).click();
+//            if(verifyElementPresent("//*[@id=\"analyze-modal-close-button\"]")) {
+//                driver.findElement(By.xpath("//*[@id=\"analyze-modal-close-button\"]")).click();
+//                driver.findElement(By.xpath("//*[@id=\"react-container\"]/div/div[2]/div[3]/a")).click();
+//            } else {
+//                driver.findElement(By.xpath("//*[@id=\"react-container\"]/div/div[2]/div[3]/a")).click();
+//            }
+//        }
         }
     }
 
     @Test(priority = 1, description = "primitive fuzzer for press release")
     public void pressReleasesFuzzer() throws InterruptedException {
-        driver.get("https://www.mnd-staging.com/user/signin");
+        String baseUrlProduction = "https://www.mynewsdesk.com/user/signin";
+        driver.get(baseUrlProduction);
         driver.findElement(By.id("username")).sendKeys("vova_sloboda_po");
         WebElement passwordField = driver.findElement(By.id("password"));
         passwordField.sendKeys("123123qwe");
@@ -104,5 +113,60 @@ public class UglyFuzzersTests extends WebDriverSetUp {
             }
         }
     }
+
+    @Test()
+    public void sendMessages() throws InterruptedException {
+        driver.get("https://www.mnd-staging.com/user/signin");
+        driver.findElement(By.id("username")).sendKeys("vladimir_codemo_po");
+        WebElement passwordField = driver.findElement(By.id("password"));
+        passwordField.sendKeys("123123qwe");
+        passwordField.submit();
+        driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div/div[2]/div/section/table/tbody/tr[1]/td/a")).click();
+        driver.findElement(By.xpath("//*[@id=\"react-container\"]/div/div[1]/div/div/div[2]/ol/li[2]/div/span")).click();
+        driver.findElement(By.xpath("//*[@id=\"react-container\"]/div/div[1]/div/div/div[2]/ol/li[2]/div/div/div/a[5]")).click();
+        for (int i = 0; i <20 ; i++) {
+            String count = Integer.toString(i);
+            driver.findElement(By.xpath("//*[@id=\"message-recipients-lists\"]")).click();
+            //*[@id="app-message"]/div[4]/div[1]/div/div[1]/span/span/div/ul/li[3]/a
+            driver.findElement(By.xpath("//*[@id=\"app-message\"]/div[4]/div[1]/div/div[1]/span/span/div/ul/li[3]/a")).click();
+            driver.findElement(By.id("message-form-subject")).sendKeys("test credits" + count);
+            driver.findElement(By.id("message-form-msg")).sendKeys("test credits" + count);
+            driver.findElement(By.xpath("//*[@id=\"app-message\"]/div[3]/div[1]/div/div[7]/button[1]")).click();
+            Thread.sleep(2000);
+        }
+    }
+
+
+    @Test()
+    public void testForce() throws InterruptedException {
+        openBrowser("https://zoogen.ua");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div/header/div[1]/div[2]/div[4]/a")).click();
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"login-form\"]/div/div/input")).sendKeys("06316389591");
+        driver.findElement(By.xpath("//*[@id=\"login-form\"]/button")).click();
+        Thread.sleep(1000);
+        for (int i = 1000; i <10000 ; i++) {
+            String input = Integer.toString(i);
+            String test = "//*[@id=\"login-form_2\"]/div/input";
+            driver.findElement(By.xpath("//*[@id=\"login-form_2\"]/div/input")).sendKeys(input);
+            driver.findElement(By.xpath("//*[@id=\"login-form_2\"]/div/input")).submit();
+           // driver.findElement(By.xpath("//*[@id=\"login-form_2\"]/button")).click();
+            driver.findElement(By.xpath("//*[@id=\"login-form_2\"]/div/input")).clear();
+           if(verifyElementPresent(test)){
+               driver.findElement(By.xpath("//*[@id=\"login-form_2\"]/div/input")).sendKeys(input);
+               driver.findElement(By.xpath("//*[@id=\"login-form_2\"]/div/input")).submit();
+               // driver.findElement(By.xpath("//*[@id=\"login-form_2\"]/button")).click();
+               driver.findElement(By.xpath("//*[@id=\"login-form_2\"]/div/input")).clear();
+           } else {
+               Thread.sleep(10000);
+           }
+            System.out.println(i);
+        }
+        Thread.sleep(10000);
+
+    }
+
 
 }

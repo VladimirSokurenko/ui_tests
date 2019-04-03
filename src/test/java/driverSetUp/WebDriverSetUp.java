@@ -26,6 +26,15 @@ public class WebDriverSetUp {
         driver.get(url);
     }
 
+    public void scrollToElement(WebElement element){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",element);
+    }
+
+    public void scrollPageDown(String pixels) throws InterruptedException{
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0," + pixels + ")");
+        Thread.sleep(1000);
+    }
+
     public void clickWebElement(WebElement element){
         element.click();
     }

@@ -34,7 +34,7 @@ public class DashboardPage {
     }
 
     public void verifyDashboardSection(){
-        WebDriverWait wait = new WebDriverWait(driver, 4);
+        WebDriverWait wait = new WebDriverWait(driver, 6);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(PUBLISH_DROP_DOWN)))).click();
         System.out.println("User navigate to the dashboard section");
     }
