@@ -62,7 +62,7 @@ public class PublishListTests extends WebDriverSetUp {
         pressReleasesPage.verifyTopMaterialIs("DRAFT");
     }
 
-    @Test(priority = 4, description = "apply published filter")
+    @Test(priority = 5, description = "apply published filter")
     public void applyPublishedFilter(){
         PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
         navigateToThePressReleasesPage();
@@ -72,7 +72,7 @@ public class PublishListTests extends WebDriverSetUp {
         pressReleasesPage.verifyTopMaterialIs("PUBLISHED");
     }
 
-    @Test(priority = 4, description = "apply scheduled filter")
+    @Test(priority = 6, description = "apply scheduled filter")
     public void applyScheduledFilter(){
         PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
         navigateToThePressReleasesPage();
@@ -82,11 +82,59 @@ public class PublishListTests extends WebDriverSetUp {
         pressReleasesPage.verifyTopMaterialIs("SCHEDULED");
     }
 
-    @Test(priority = 5, description = "clone DRAFT press release")
+    @Test(priority = 7, description = "clone DRAFT press release")
     public void cloneDraftPressRelease() throws InterruptedException{
         PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
         DashboardPage dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
         navigateToThePressReleasesPage();
+        String pressReleaseTitle = pressReleasesPage.getPressReleaseTitleText();
+        System.out.println("title is: " + pressReleaseTitle);
+        scrollPageDown("1000");
+        pressReleasesPage.clickActionsDropDown();
+        pressReleasesPage.clickCloneActionButton();
+        pressReleasesPage.checkFirstNewsRoomCheckBox();
+        pressReleasesPage.clickCloneButton();
+        pressReleasesPage.verifyToasterText(pressReleaseTitle);
+        scrollPageDown("-1000");
+        pressReleasesPage.clickOnNewsRoomSelector();
+        pressReleasesPage.clickOnCodemoGlobalOption();
+        dashboardPage.clickOnPublishDropDown();
+        dashboardPage.clickOnPressReleasesOption();
+        scrollPageDown("500");
+        pressReleasesPage.verifyPressReleaseCloned(pressReleaseTitle);
+    }
+
+    @Test(priority = 8, description = "clone PUBLISHED press release")
+    public void clonePublishedPressRelease() throws InterruptedException{
+        PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
+        DashboardPage dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
+        navigateToThePressReleasesPage();
+        pressReleasesPage.clickOnFilterButton();
+        pressReleasesPage.choosePublishOption();
+        String pressReleaseTitle = pressReleasesPage.getPressReleaseTitleText();
+        System.out.println("title is: " + pressReleaseTitle);
+        scrollPageDown("1000");
+        pressReleasesPage.clickActionsDropDown();
+        pressReleasesPage.clickCloneActionButton();
+        pressReleasesPage.checkFirstNewsRoomCheckBox();
+        pressReleasesPage.clickCloneButton();
+        pressReleasesPage.verifyToasterText(pressReleaseTitle);
+        scrollPageDown("-1000");
+        pressReleasesPage.clickOnNewsRoomSelector();
+        pressReleasesPage.clickOnCodemoGlobalOption();
+        dashboardPage.clickOnPublishDropDown();
+        dashboardPage.clickOnPressReleasesOption();
+        scrollPageDown("500");
+        pressReleasesPage.verifyPressReleaseCloned(pressReleaseTitle);
+    }
+
+    @Test(priority = 9, description = "clone SCHEDULED press release")
+    public void cloneScheduledPressRelease() throws InterruptedException{
+        PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
+        DashboardPage dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
+        navigateToThePressReleasesPage();
+        pressReleasesPage.clickOnFilterButton();
+        pressReleasesPage.chooseScheduledOption();
         String pressReleaseTitle = pressReleasesPage.getPressReleaseTitleText();
         System.out.println("title is: " + pressReleaseTitle);
         scrollPageDown("1000");

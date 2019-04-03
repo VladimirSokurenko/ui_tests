@@ -48,7 +48,7 @@ public class PressReleasesPage extends WebDriverSetUp {
     @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/ul/li[1]/div[2]/ul/li[7]/a")
     WebElement deleteDraftOption;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div[5]/ul/li[1]/div[2]/ul/li[4]/a")
+    @FindBy(how = How.LINK_TEXT, using = "Clone")
     WebElement cloneActionButton;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"app-overlay\"]/div/div/div/div[3]/section/ul/li[1]/div[2]/div/span/span")
