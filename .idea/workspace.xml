@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d186b4d-af84-41c0-ad3b-1fbc7c2a0e6c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressReleasesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressReleasesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/PublishListTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/PublishListTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="6d186b4d-af84-41c0-ad3b-1fbc7c2a0e6c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +29,8 @@
       <file leaf-file-name="PublishListTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/PublishListTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2040">
-              <caret line="136" column="50" selection-start-line="136" selection-start-column="50" selection-end-line="136" selection-end-column="50" />
+            <state relative-caret-position="405">
+              <caret line="115" column="31" lean-forward="true" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -467,8 +464,8 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32964426" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.46484786" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.28436518" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.46484786" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.28436518" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18526663" />
@@ -860,8 +857,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/PublishListTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="136" column="50" selection-start-line="136" selection-start-column="50" selection-end-line="136" selection-end-column="50" />
+        <state relative-caret-position="405">
+          <caret line="115" column="31" lean-forward="true" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
