@@ -17,6 +17,8 @@ import pageObjects.pressOfficerPages.PressRoomsPage;
 
 public class PublishListTests extends WebDriverSetUp {
 
+    final static String SLOB_USERNAME = "vova_sloboda_po";
+    final static String SLOB_PASSWORD = "123123qwe";
     final static String USERNAME = "vladimir.s";
     final static String PASSWORD = "vladimir2019";
     final static String BASE_URL = "https://www.mynewsdesk.com/user/signin";
@@ -151,6 +153,24 @@ public class PublishListTests extends WebDriverSetUp {
         scrollPageDown("500");
         pressReleasesPage.verifyPressReleaseCloned(pressReleaseTitle);
     }
+
+    @Test(priority = 10, description = "display zero-state when no press release created")
+    public void AllZeroStatesDisplaying() throws InterruptedException{
+        UserSignInPage userSignInPage = PageFactory.initElements(driver, UserSignInPage.class);
+        PressRoomsPage pressRoomsPage = PageFactory.initElements(driver, PressRoomsPage.class);
+        DashboardPage dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
+        PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
+        openBrowser(BASE_URL);
+        userSignInPage.fillInUsername(SLOB_USERNAME);
+        userSignInPage.fillInPassword(SLOB_PASSWORD);
+        userSignInPage.clickLoginButton();
+        pressRoomsPage.verifyManageUsersButtonIsPresent();
+        pressRoomsPage.navigateToSlobodaUaPressRoom();
+        dashboardPage.clickOnPublishDropDown();
+        dashboardPage.clickOnPressReleasesOption();
+        pressReleasesPage.verifyAllZeroState();
+    }
+
 
 
 

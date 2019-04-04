@@ -20,7 +20,12 @@ public class PressRoomsPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"wrapper\"]/div/div[1]/div/a")
     WebElement manageUsersButton;
 
+    @FindBy(how = How.LINK_TEXT, using = "sloboda_studio_ua")
+    WebElement slobodaPressRoom;
+
     public void navigateToSEPressRoom(){ sePressRoom.click(); }
+
+    public void navigateToSlobodaUaPressRoom(){ slobodaPressRoom.click(); }
 
     public void verifyManageUsersButtonIsPresent(){
         WebDriverWait wait = new WebDriverWait(driver, 4);

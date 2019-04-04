@@ -60,10 +60,10 @@ public class WebDriverSetUp {
         }
     }
 
-    @AfterMethod
-    public void exitBrowser(){
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void exitBrowser(){
+//        driver.quit();
+//    }
 
 
 

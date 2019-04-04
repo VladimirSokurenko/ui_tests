@@ -12,7 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 
-public class PressReleasesPage extends WebDriverSetUp {
+public class PressReleasesPage {
 
     WebDriver driver;
 
@@ -68,6 +68,12 @@ public class PressReleasesPage extends WebDriverSetUp {
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[1]/div/div/div[3]/ol/li[3]")
     WebElement newsRoomSelector;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div[4]/ul/div/h3")
+    WebElement allZeroStateHeadingText;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div[4]/ul/div/a")
+    WebElement allZeroStateCreateButton;
 
     final static String PUBLISH_FILTER_BUTTON ="publish-filter-button";
 
@@ -138,6 +144,15 @@ public class PressReleasesPage extends WebDriverSetUp {
     public void verifyPressReleaseCloned(String title){
         String titleTextV = getPressReleaseTitleText();
         Assert.assertEquals(titleTextV, title);
+    }
+
+    public void verifyAllZeroState(){
+        String headingText = allZeroStateHeadingText.getText();
+        String buttonText = allZeroStateCreateButton.getText();
+        Assert.assertEquals(headingText, "You have no press releases created");
+        ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"react-container\"]/div/div[2]/div[4]/ul/div/a"));
+        Assert.assertEquals(buttonText, "Create new press release");
+        System.out.println("Heading text is " + headingText);
     }
 
 

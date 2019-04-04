@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d186b4d-af84-41c0-ad3b-1fbc7c2a0e6c" name="Default" comment="" />
+    <list default="true" id="6d186b4d-af84-41c0-ad3b-1fbc7c2a0e6c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/driverSetUp/WebDriverSetUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/driverSetUp/WebDriverSetUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressReleasesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressReleasesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressRoomsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressRoomsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/PublishListTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/PublishListTests.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,12 +22,8 @@
       <file leaf-file-name="WebDriverSetUp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/driverSetUp/WebDriverSetUp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="62" selection-start-line="62" selection-end-line="65" selection-end-column="5" />
-              <folding>
-                <element signature="e#1923#1924#0" expanded="true" />
-                <element signature="e#1952#1953#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="188">
+              <caret line="62" selection-start-line="62" selection-start-column="2" selection-end-line="65" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -29,8 +31,8 @@
       <file leaf-file-name="PublishListTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/PublishListTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="115" column="31" lean-forward="true" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="31" />
+            <state relative-caret-position="263">
+              <caret line="170" column="47" selection-start-line="170" selection-start-column="47" selection-end-line="170" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,8 +43,8 @@
       <file leaf-file-name="PressReleasesPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressReleasesPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="50" column="47" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
+            <state relative-caret-position="278">
+              <caret line="148" column="36" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
               <folding>
                 <element signature="method#verifyFilterButtonIsPresent#0;class#PressReleasesPage#0" />
                 <element signature="method#verifyFilterText#0;class#PressReleasesPage#0" />
@@ -51,6 +53,28 @@
                 <element signature="method#verifyTopMaterialIs#0;class#PressReleasesPage#0" />
                 <element signature="method#getPressReleaseTitleText#0;class#PressReleasesPage#0" />
                 <element signature="method#verifyPressReleaseCloned#0;class#PressReleasesPage#0" />
+                <element signature="method#verifyAllZeroState#0;class#PressReleasesPage#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashboardPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/DashboardPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PressRoomsPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressRoomsPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="27" column="73" selection-start-line="27" selection-start-column="73" selection-end-line="27" selection-end-column="73" />
+              <folding>
+                <element signature="method#verifyManageUsersButtonIsPresent#0;class#PressRoomsPage#0" />
               </folding>
             </state>
           </provider>
@@ -85,14 +109,14 @@
         <option value="$PROJECT_DIR$/src/test/java/tests/JournalistTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/pageObjects/journalistPages/ReaderStoriesPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/ReaderPageJournalistTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressRoomsPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressReleaseWizardPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/DashboardPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/UglyFuzzersTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/SeleniumTutorialTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/driverSetUp/WebDriverSetUp.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressReleasesPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressRoomsPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/PublishListTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressReleasesPage.java" />
       </list>
     </option>
   </component>
@@ -107,9 +131,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1508" />
-    <option name="y" value="149" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1714" />
+    <option name="y" value="238" />
     <option name="width" value="1311" />
     <option name="height" value="772" />
   </component>
@@ -120,9 +144,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,6 +206,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -203,7 +227,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.PublishListTests">
+  <component name="RunManager" selected="TestNG.PublishListTests.AllZeroStatesDisplaying">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -252,7 +276,7 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="PublishListTests.applyScheduledFilter" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PublishListTests.AllZeroStatesDisplaying" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="mnd_prime_uitest" />
       <extension name="coverage">
         <pattern>
@@ -265,36 +289,7 @@
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.PublishListTests" />
-      <option name="METHOD_NAME" value="applyScheduledFilter" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="PublishListTests.cloneDraftPressRelease" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="mnd_prime_uitest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.PublishListTests" />
-      <option name="METHOD_NAME" value="cloneDraftPressRelease" />
+      <option name="METHOD_NAME" value="AllZeroStatesDisplaying" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -368,6 +363,35 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="PublishListTests.zeroStatesDisplaying" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="mnd_prime_uitest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.PublishListTests" />
+      <option name="METHOD_NAME" value="zeroStatesDisplaying" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -391,19 +415,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="TestNG.PublishListTests.cloneDraftPressRelease" />
       <item itemvalue="TestNG.PublishListTests" />
-      <item itemvalue="TestNG.PublishListTests.applyScheduledFilter" />
       <item itemvalue="TestNG.PublishListTests.clonePublishedPressRelease" />
       <item itemvalue="TestNG.PublishListTests.cloneScheduledPressRelease" />
+      <item itemvalue="TestNG.PublishListTests.zeroStatesDisplaying" />
+      <item itemvalue="TestNG.PublishListTests.AllZeroStatesDisplaying" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.PublishListTests.AllZeroStatesDisplaying" />
+        <item itemvalue="TestNG.PublishListTests.zeroStatesDisplaying" />
         <item itemvalue="TestNG.PublishListTests" />
         <item itemvalue="TestNG.PublishListTests.cloneScheduledPressRelease" />
         <item itemvalue="TestNG.PublishListTests.clonePublishedPressRelease" />
-        <item itemvalue="TestNG.PublishListTests.cloneDraftPressRelease" />
-        <item itemvalue="TestNG.PublishListTests.applyScheduledFilter" />
       </list>
     </recent_temporary>
   </component>
@@ -421,21 +445,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PublishListTests_cloneDraftPressRelease - 2019.04.03 at 15h 50m 33s.xml">
-      <configuration name="PublishListTests.cloneDraftPressRelease" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="PublishListTests - 2019.04.03 at 15h 58m 50s.xml">
-      <configuration name="PublishListTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="PublishListTests_clonePublishedPressRelease - 2019.04.03 at 16h 15m 54s.xml">
-      <configuration name="PublishListTests.clonePublishedPressRelease" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="PublishListTests_cloneDraftPressRelease - 2019.04.03 at 16h 20m 58s.xml">
-      <configuration name="PublishListTests.cloneDraftPressRelease" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="PublishListTests_cloneDraftPressRelease - 2019.04.03 at 16h 21m 58s.xml">
-      <configuration name="PublishListTests.cloneDraftPressRelease" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="PublishListTests_cloneDraftPressRelease - 2019.04.03 at 16h 22m 40s.xml">
       <configuration name="PublishListTests.cloneDraftPressRelease" configurationId="TestNG" />
     </history-entry>
@@ -451,9 +460,25 @@
     <history-entry file="PublishListTests - 2019.04.03 at 16h 30m 26s.xml">
       <configuration name="PublishListTests" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="PublishListTests_zeroStatesDisplaying - 2019.04.04 at 14h 21m 53s.xml">
+      <configuration name="PublishListTests.zeroStatesDisplaying" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="PublishListTests_zeroStatesDisplaying - 2019.04.04 at 14h 22m 36s.xml">
+      <configuration name="PublishListTests.zeroStatesDisplaying" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="PublishListTests_AllZeroStatesDisplaying - 2019.04.04 at 14h 28m 16s.xml">
+      <configuration name="PublishListTests.AllZeroStatesDisplaying" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="PublishListTests_AllZeroStatesDisplaying - 2019.04.04 at 14h 52m 12s.xml">
+      <configuration name="PublishListTests.AllZeroStatesDisplaying" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="PublishListTests_AllZeroStatesDisplaying - 2019.04.04 at 14h 53m 38s.xml">
+      <configuration name="PublishListTests.AllZeroStatesDisplaying" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1420" y="-11" width="1867" height="1092" extended-state="6" />
+    <frame x="1421" y="-4" width="1865" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -464,11 +489,11 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32964426" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.46484786" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.28436518" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.46484786" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.28436518" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18526663" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18856515" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -797,24 +822,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressRoomsPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/SeleniumTutorialTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="81" column="35" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/DashboardPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="37" column="78" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
         </state>
       </provider>
     </entry>
@@ -830,19 +841,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/driverSetUp/WebDriverSetUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="62" selection-start-line="62" selection-end-line="65" selection-end-column="5" />
+        <state relative-caret-position="188">
+          <caret line="62" selection-start-line="62" selection-start-column="2" selection-end-line="65" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressRoomsPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="27" column="73" selection-start-line="27" selection-start-column="73" selection-end-line="27" selection-end-column="73" />
           <folding>
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1952#1953#0" expanded="true" />
+            <element signature="method#verifyManageUsersButtonIsPresent#0;class#PressRoomsPage#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/DashboardPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pageObjects/pressOfficerPages/PressReleasesPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="50" column="47" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
+        <state relative-caret-position="278">
+          <caret line="148" column="36" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
           <folding>
             <element signature="method#verifyFilterButtonIsPresent#0;class#PressReleasesPage#0" />
             <element signature="method#verifyFilterText#0;class#PressReleasesPage#0" />
@@ -851,14 +875,15 @@
             <element signature="method#verifyTopMaterialIs#0;class#PressReleasesPage#0" />
             <element signature="method#getPressReleaseTitleText#0;class#PressReleasesPage#0" />
             <element signature="method#verifyPressReleaseCloned#0;class#PressReleasesPage#0" />
+            <element signature="method#verifyAllZeroState#0;class#PressReleasesPage#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/PublishListTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="115" column="31" lean-forward="true" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="31" />
+        <state relative-caret-position="263">
+          <caret line="170" column="47" selection-start-line="170" selection-start-column="47" selection-end-line="170" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
