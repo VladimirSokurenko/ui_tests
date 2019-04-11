@@ -26,6 +26,8 @@ public class WebDriverSetUp {
         driver.get(url);
     }
 
+    public void navigateTo(String url){ driver.navigate().to(url); }
+
     public void scrollToElement(WebElement element){
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",element);
     }
@@ -60,10 +62,10 @@ public class WebDriverSetUp {
         }
     }
 
-//    @AfterMethod
-//    public void exitBrowser(){
-//        driver.quit();
-//    }
+    @AfterMethod
+    public void exitBrowser(){
+        driver.quit();
+    }
 
 
 

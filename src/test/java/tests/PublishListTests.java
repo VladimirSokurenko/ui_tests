@@ -22,6 +22,7 @@ public class PublishListTests extends WebDriverSetUp {
     final static String USERNAME = "vladimir.s";
     final static String PASSWORD = "vladimir2019";
     final static String BASE_URL = "https://www.mynewsdesk.com/user/signin";
+    final static String SCHEDULED_FILTERED_URL = "https://publish.mynewsdesk.com/se/list/pressreleases?status=scheduled";
 
     @Test(priority = 1, description = "login as Press Officer")
     public void logInAsPressOfficer(){
@@ -169,6 +170,23 @@ public class PublishListTests extends WebDriverSetUp {
         dashboardPage.clickOnPublishDropDown();
         dashboardPage.clickOnPressReleasesOption();
         pressReleasesPage.verifyAllZeroState();
+    }
+
+    @Test(priority = 11, description = "display scheduled zero-state")
+    public void scheduledZeroStateDisplaying(){
+        UserSignInPage userSignInPage = PageFactory.initElements(driver, UserSignInPage.class);
+        PressRoomsPage pressRoomsPage = PageFactory.initElements(driver, PressRoomsPage.class);
+        DashboardPage dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
+        PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
+        openBrowser(BASE_URL);
+        userSignInPage.fillInUsername(SLOB_USERNAME);
+        userSignInPage.fillInPassword(SLOB_PASSWORD);
+        userSignInPage.clickLoginButton();
+        pressRoomsPage.verifyManageUsersButtonIsPresent();
+        pressRoomsPage.navigateToSlobodaUaPressRoom();
+        navigateTo(SCHEDULED_FILTERED_URL);
+        pressReleasesPage.verifyFilterText("Showing: scheduled");
+        pressReleasesPage.verifyFilteredZeroState("You have no press releases scheduled");
     }
 
 

@@ -75,6 +75,9 @@ public class PressReleasesPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div[4]/ul/div/a")
     WebElement allZeroStateCreateButton;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div[5]/ul/div/h3")
+    WebElement filteredZeroStateHeading;
+
     final static String PUBLISH_FILTER_BUTTON ="publish-filter-button";
 
     public void verifyFilterButtonIsPresent(){
@@ -153,6 +156,10 @@ public class PressReleasesPage {
         ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"react-container\"]/div/div[2]/div[4]/ul/div/a"));
         Assert.assertEquals(buttonText, "Create new press release");
         System.out.println("Heading text is " + headingText);
+    }
+
+    public void verifyFilteredZeroState(String text){
+        Assert.assertEquals(filteredZeroStateHeading.getText(), text);
     }
 
 
