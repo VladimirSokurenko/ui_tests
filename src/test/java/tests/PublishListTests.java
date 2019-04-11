@@ -176,7 +176,6 @@ public class PublishListTests extends WebDriverSetUp {
     public void scheduledZeroStateDisplaying(){
         UserSignInPage userSignInPage = PageFactory.initElements(driver, UserSignInPage.class);
         PressRoomsPage pressRoomsPage = PageFactory.initElements(driver, PressRoomsPage.class);
-        DashboardPage dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
         PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
         openBrowser(BASE_URL);
         userSignInPage.fillInUsername(SLOB_USERNAME);
@@ -187,6 +186,86 @@ public class PublishListTests extends WebDriverSetUp {
         navigateTo(SCHEDULED_FILTERED_URL);
         pressReleasesPage.verifyFilterText("Showing: scheduled");
         pressReleasesPage.verifyFilteredZeroState("You have no press releases scheduled");
+    }
+
+    @Test(priority = 12, description = "display scheduled zero-state")
+    public void publishedZeroStateDisplaying(){
+        UserSignInPage userSignInPage = PageFactory.initElements(driver, UserSignInPage.class);
+        PressRoomsPage pressRoomsPage = PageFactory.initElements(driver, PressRoomsPage.class);
+        PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
+        openBrowser(BASE_URL);
+        userSignInPage.fillInUsername(SLOB_USERNAME);
+        userSignInPage.fillInPassword(SLOB_PASSWORD);
+        userSignInPage.clickLoginButton();
+        pressRoomsPage.verifyManageUsersButtonIsPresent();
+        pressRoomsPage.navigateToSlobodaUaPressRoom();
+        navigateTo(SCHEDULED_FILTERED_URL);
+        pressReleasesPage.verifyFilterText("Showing: scheduled");
+        pressReleasesPage.verifyFilteredZeroState("You have no press releases scheduled");
+        pressReleasesPage.clickOnFilterButton();
+        pressReleasesPage.choosePublishOption();
+        pressReleasesPage.verifyFilterText("Showing: published");
+        pressReleasesPage.verifyFilteredZeroState("You have no press releases published");
+    }
+
+    @Test(priority = 13, description = "display scheduled zero-state")
+    public void draftZeroStateDisplaying(){
+        UserSignInPage userSignInPage = PageFactory.initElements(driver, UserSignInPage.class);
+        PressRoomsPage pressRoomsPage = PageFactory.initElements(driver, PressRoomsPage.class);
+        PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
+        openBrowser(BASE_URL);
+        userSignInPage.fillInUsername(SLOB_USERNAME);
+        userSignInPage.fillInPassword(SLOB_PASSWORD);
+        userSignInPage.clickLoginButton();
+        pressRoomsPage.verifyManageUsersButtonIsPresent();
+        pressRoomsPage.navigateToSlobodaUaPressRoom();
+        navigateTo(SCHEDULED_FILTERED_URL);
+        pressReleasesPage.verifyFilterText("Showing: scheduled");
+        pressReleasesPage.verifyFilteredZeroState("You have no press releases scheduled");
+        pressReleasesPage.clickOnFilterButton();
+        pressReleasesPage.chooseDraftOption();
+        pressReleasesPage.verifyFilterText("Showing: draft");
+        pressReleasesPage.verifyFilteredZeroState("You have no drafts");
+    }
+
+    @Test(priority = 14, description = "display scheduled zero-state")
+    public void deletionZeroStateDisplaying(){
+        UserSignInPage userSignInPage = PageFactory.initElements(driver, UserSignInPage.class);
+        PressRoomsPage pressRoomsPage = PageFactory.initElements(driver, PressRoomsPage.class);
+        PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
+        openBrowser(BASE_URL);
+        userSignInPage.fillInUsername(SLOB_USERNAME);
+        userSignInPage.fillInPassword(SLOB_PASSWORD);
+        userSignInPage.clickLoginButton();
+        pressRoomsPage.verifyManageUsersButtonIsPresent();
+        pressRoomsPage.navigateToSlobodaUaPressRoom();
+        navigateTo(SCHEDULED_FILTERED_URL);
+        pressReleasesPage.verifyFilterText("Showing: scheduled");
+        pressReleasesPage.verifyFilteredZeroState("You have no press releases scheduled");
+        pressReleasesPage.clickOnFilterButton();
+        pressReleasesPage.chooseDeletionOption();
+        pressReleasesPage.verifyFilterText("Showing: deletion");
+        pressReleasesPage.verifyFilteredZeroState("You have no press releases set for deletion");
+    }
+
+    @Test(priority = 15, description = "display scheduled zero-state")
+    public void pinnedZeroStateDisplaying(){
+        UserSignInPage userSignInPage = PageFactory.initElements(driver, UserSignInPage.class);
+        PressRoomsPage pressRoomsPage = PageFactory.initElements(driver, PressRoomsPage.class);
+        PressReleasesPage pressReleasesPage = PageFactory.initElements(driver, PressReleasesPage.class);
+        openBrowser(BASE_URL);
+        userSignInPage.fillInUsername(SLOB_USERNAME);
+        userSignInPage.fillInPassword(SLOB_PASSWORD);
+        userSignInPage.clickLoginButton();
+        pressRoomsPage.verifyManageUsersButtonIsPresent();
+        pressRoomsPage.navigateToSlobodaUaPressRoom();
+        navigateTo(SCHEDULED_FILTERED_URL);
+        pressReleasesPage.verifyFilterText("Showing: scheduled");
+        pressReleasesPage.verifyFilteredZeroState("You have no press releases scheduled");
+        pressReleasesPage.clickOnFilterButton();
+        pressReleasesPage.choosePinnedOption();
+        pressReleasesPage.verifyFilterText("Showing: pinned");
+        pressReleasesPage.verifyFilteredZeroState("You have no press releases pinned");
     }
 
 

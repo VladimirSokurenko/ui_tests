@@ -36,6 +36,12 @@ public class PressReleasesPage {
     @FindBy(how = How.LINK_TEXT, using = "Scheduled")
     WebElement scheduleFilterOption;
 
+    @FindBy(how = How.LINK_TEXT, using = "Deletion")
+    WebElement deletionFilterOption;
+
+    @FindBy(how = How.LINK_TEXT, using = "Pinned")
+    WebElement pinnedFilterOption;
+
     @FindBy(how = How.XPATH, using = "//*[@id=\"react-container\"]/div/div[2]/div[5]/ul/li[1]/div[1]/div/div/span")
     WebElement firstMaterialHeading;
 
@@ -95,6 +101,10 @@ public class PressReleasesPage {
     public void choosePublishOption(){ publishFilterOption.click(); }
 
     public void chooseScheduledOption(){ scheduleFilterOption.click(); }
+
+    public void chooseDeletionOption(){ deletionFilterOption.click(); }
+
+    public void choosePinnedOption(){ pinnedFilterOption.click(); }
 
     public void verifyFilterText(String text){
         WebDriverWait wait = new WebDriverWait(driver, 4);
